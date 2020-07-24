@@ -15,7 +15,7 @@ public class EventIteratorImpl implements EventIterator {
 
 	@Override
 	public void close() throws Exception {
-		this.close();
+		this.it = null;
 	}
 
 	@Override

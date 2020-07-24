@@ -14,7 +14,6 @@ import net.intelie.challenges.implementation.EventStoreImpl;
 public class EventStoreImplTest {
 	@Test
     public void testInsertingOneEvent() throws Exception {
-		EventRepository.events = new ArrayList<Event>();
 		EventStoreImpl eventStoreImpl = new EventStoreImpl();
 		eventStoreImpl.insert(new Event("some_type", 1000000000000L));
 		
@@ -24,7 +23,6 @@ public class EventStoreImplTest {
 	
 	@Test
     public void testInsertingManyEvent() throws Exception {
-		EventRepository.events = new ArrayList<Event>();
 		EventStoreImpl eventStoreImpl = new EventStoreImpl();
 		
 		for (int i = 0; i < 9; i++) {

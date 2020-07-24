@@ -1,3 +1,8 @@
+# Brief explanation
+
+Please, specific comments and explanations are in the source codes. The basic solution involves using ConcurrentHashMap to provide a native thread-safe memory data repository through a mechanism called Lock. We could use the synchronize approach, but although synchronizes are thread-safety, they perform poorly because they allow only one thread to work at a time. According to [codejava.net](https://www.codejava.net/java-core/collections/understanding-collections-and-thread-safety-in-java#:~:text=%20Understand%20Java%20Collections%20and%20Thread%20Safety%20,we%E2%80%99ve%20understood%20that%20the%20basic%20collection...%20More%20), a "lock has the same basic behavior as classical synchronization but a thread can also acquire it under special conditions: only if the lock is not currently held, or with a timeout, or if the thread is not interrupted. So, useing it we have concurrent collections improved for thread safety and performance". More details in source code. Also it was develped a main runnable file to test in prompt.
+
+
 # Implement EventStore
 
 In this challenge, you will create a class that implements the `EventStore` 

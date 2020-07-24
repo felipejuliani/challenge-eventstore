@@ -1,6 +1,6 @@
 package net.intelie.challenges.db;
 
-import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 import net.intelie.challenges.Event;
 
@@ -9,5 +9,5 @@ import net.intelie.challenges.Event;
  * Class that represents the global memory repository accessed by other layers to handle event data.
  */
 public class EventRepository {
-	public static List<Event> events;
+	public static ConcurrentHashMap<String, Event> events;
 }

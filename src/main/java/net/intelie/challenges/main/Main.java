@@ -1,9 +1,9 @@
 package net.intelie.challenges.main;
 
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
 import net.intelie.challenges.Event;
@@ -30,7 +30,7 @@ public class Main {
 	 *  - "exit" to close application.
 	 */
 	public static void main(String[] args) {
-		EventRepository.events = new ArrayList<Event>();
+		EventRepository.events = new ConcurrentHashMap<String, Event>();
 				
 		EventStoreImpl eventStoreImpl = new EventStoreImpl();
 		
@@ -75,7 +75,7 @@ public class Main {
 	
 	
 	/**
-	 * From here to the end auxiliary methods were written to set command line menus, set 
+	 * From here to the end the auxiliary methods were written to set command line menus, set 
 	 * memory repository of random events, as well a method to verify the type of text insertion. 
 	 */
 	private static void executeIteractor(EventIterator eventIterator, String type) {
@@ -93,8 +93,8 @@ public class Main {
         String selection;
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Type a number to insert a random events amount or type \"query\" to execute one");
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Type a number to insert a random events amount or type 'query' or 'list' or 'count'");
+        System.out.println("-----------------------------------------------------------------------------------");
         System.out.println(": ");
 
         selection = input.nextLine();
@@ -105,8 +105,8 @@ public class Main {
 		String query;
         Scanner input = new Scanner(System.in);
         
-        System.out.println("Type a query (\"<ACTION> <EVENT_TYPE> <START_TIME> <END_TIME>\")");
-        System.out.println("---------------------------------------------------");
+        System.out.println("Now type: ['list' or 'remove-all'] ['start', 'span', 'data', 'stop'] [an initial timestamp](optional) [a final timestamp](optional)");
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
         System.out.print(": ");
         
         query = input.nextLine();
